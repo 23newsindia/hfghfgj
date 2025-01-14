@@ -27,9 +27,18 @@ require_once __DIR__ . '/src/Util/functions.php';
 
 // Initialize the plugin
 function wp_unused_css_remover_init() {
-    // Initialize classes
-    $plugin = new Sphere\Debloat\Plugin();
-    $plugin->init();
+    // Only process CSS on frontend
+    if (!is_admin()) {
+        // Initialize plugin early to catch all styles
+        add_action('wp', function() {
+            $plugin = new Sphere\Debloat\Plugin();
+            $plugin->init();
+        }, 1);
+    } else {
+        // Admin initialization
+        $plugin = new Sphere\Debloat\Plugin();
+        $plugin->init();
+    }
 }
 add_action('plugins_loaded', 'wp_unused_css_remover_init');
 
@@ -50,9 +59,6 @@ add_action('plugins_loaded', function() {
         }, 0);
     }
 });
-
-
-
 
 
 
