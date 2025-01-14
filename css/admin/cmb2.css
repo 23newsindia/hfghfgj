@@ -1,0 +1,101 @@
+.sphere-cmb2-wrap {
+	-webkit-font-smoothing: antialiased;
+}
+
+.sphere-cmb2-wrap .cmb-type-checkbox .cmb-td {
+	max-width: 750px;
+	padding-top: 5px !important;
+}
+
+.sphere-cmb2-wrap .cmb2-metabox-description {
+	font-size: 13px;
+}
+
+.sphere-cmb2-wrap label > .cmb2-metabox-description {
+	font-size: 13px;
+	font-style: normal;
+	line-height: 1.4;
+	color: #444;
+	max-width: 500px;
+}
+
+.sphere-cmb2-wrap .cmb2-metabox > .cmb-row:not(._) {
+	padding: 15px 1em;
+}
+
+.cmb2-options-page .sphere-cmb2-wrap .cmb-type-title .cmb2-metabox-title {
+	font-size: 14px;
+	text-transform: initial;
+	font-weight: 700;
+	padding: 0;
+}
+
+.cmb2-options-page .cmb2-metabox > .cmb-row > .cmb-th {
+	font-weight: 500;
+}
+
+.sphere-cmb2-wrap .cache-info {
+	margin-top: 20px;
+}
+
+/**
+ * Specifics for Debloat Plugin options page.
+ */
+.debloat-options {
+	max-width: 100%;
+	margin-right: 20px;
+}
+
+.debloat-options .nav-tab-wrapper {
+	margin-bottom: 1em !important;
+}
+
+.debloat-options .cmb-field-list > :first-child {
+	margin-top: 0;
+}
+
+.debloat-inner-wrap {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.debloat-inner-wrap form,
+.debloat-options .wrap {
+	width: 72%;
+	max-width: 1200px;
+}
+
+.debloat-sidebar {
+	width: 28%;
+	padding-left: 35px;
+	box-sizing: border-box;
+}
+
+@media (max-width: 940px) {
+	.debloat-options .wrap,
+	.debloat-inner-wrap form {
+		width: 100%;
+	}
+
+	.debloat-sidebar {
+		min-width: 350px;
+	}
+}
+
+.debloat-cache-info .cmb-type-title {
+	margin-top: 0 !important;
+}
+
+.debloat-intro-info {
+	margin-bottom: 22px;
+	font-size: 13px;
+}
+
+.debloat-intro-info h3 {
+	font-size: 15px;
+}
+
+.debloat-intro-info li {
+	font-size: 13px;
+	line-height: 1.5;
+}

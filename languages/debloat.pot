@@ -1,0 +1,338 @@
+# Copyright (C) 2024 debloat
+# This file is distributed under the same license as the debloat package.
+msgid ""
+msgstr ""
+"Project-Id-Version: debloat\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: bootstrap.php:14
+msgid "The %2$sDebloat%3$s plugin requires %2$sPHP 7.1+%3$s to run properly. Please contact your web hosting company and ask them to update the PHP version of your site.%4$s Your current version of PHP has reached end-of-life is %2$shighly insecure: %1$s%3$s"
+msgstr ""
+
+#: inc/admin/admin.php:145
+msgid "Debloat Plugin Settings"
+msgstr ""
+
+#: inc/admin/admin.php:149
+msgid "Debloat: Optimize"
+msgstr ""
+
+#: inc/admin/admin.php:151, inc/admin/options-data.php:36
+msgid "Optimize CSS"
+msgstr ""
+
+#: inc/admin/admin.php:164, inc/admin/admin.php:168, inc/admin/admin.php:170, inc/admin/options-data.php:275
+msgid "Optimize JS"
+msgstr ""
+
+#: inc/admin/admin.php:183, inc/admin/admin.php:187, inc/admin/admin.php:189
+msgid "General Settings"
+msgstr ""
+
+#: inc/admin/admin.php:237
+msgid "Condition Type"
+msgstr ""
+
+#: inc/admin/admin.php:241
+msgid "Class - If a class (in \"condition match\") exists in HTML, keep classes matching \"selector match\"."
+msgstr ""
+
+#: inc/admin/admin.php:242
+msgid "Prefix - Condition matches the first class and keeps all the used child classes. Example: .s-dark will keep .s-dark .site-header."
+msgstr ""
+
+#: inc/admin/admin.php:248
+msgid "Condition Match"
+msgstr ""
+
+#: inc/admin/admin.php:249
+msgid "Required. Usually a single class, example:"
+msgstr ""
+
+#: inc/admin/admin.php:256
+msgid "Selectors Match"
+msgstr ""
+
+#: inc/admin/admin.php:257
+msgid "Enter one per line. See example matchings in \"Always Keep Selectors\" above."
+msgstr ""
+
+#: inc/admin/admin.php:326
+msgid "Cache Stats"
+msgstr ""
+
+#: inc/admin/admin.php:337
+msgid "Minified CSS files: %d"
+msgstr ""
+
+#: inc/admin/admin.php:338
+msgid "Minified JS files: %d"
+msgstr ""
+
+#: inc/admin/admin.php:339
+msgid "Processed CSS Sheets: %d"
+msgstr ""
+
+#: inc/admin/options-data.php:20
+msgid "All Pages"
+msgstr ""
+
+#: inc/admin/options-data.php:21
+msgid "Single Post/Article"
+msgstr ""
+
+#: inc/admin/options-data.php:44
+msgid "Fix Render-Blocking CSS"
+msgstr ""
+
+#: inc/admin/options-data.php:45
+msgid "Enable CSS Optimizations to fix Render-blocking CSS."
+msgstr ""
+
+#: inc/admin/options-data.php:51
+msgid "Inline Optimized CSS"
+msgstr ""
+
+#: inc/admin/options-data.php:52
+msgid "Inline the CSS to prevent flash of unstyled content. Highly recommended."
+msgstr ""
+
+#: inc/admin/options-data.php:59
+msgid "Inline Google Fonts CSS"
+msgstr ""
+
+#: inc/admin/options-data.php:60
+msgid "Inline the Google Fonts CSS for a big boost on FCP and slight on LCP on mobile. Highly recommended."
+msgstr ""
+
+#: inc/admin/options-data.php:67
+msgid "Minify CSS"
+msgstr ""
+
+#: inc/admin/options-data.php:68
+msgid "Minify CSS to reduced the CSS size."
+msgstr ""
+
+#: inc/admin/options-data.php:75
+msgid "Exclude Styles"
+msgstr ""
+
+#: inc/admin/options-data.php:77, inc/admin/options-data.php:183
+msgid "Enter one per line to exclude certain CSS files from this optimizations. Examples:"
+msgstr ""
+
+#: inc/admin/options-data.php:88, inc/admin/options-data.php:322
+msgid "Enable Plugin Integrations"
+msgstr ""
+
+#: inc/admin/options-data.php:89
+msgid "Special pre-made rules for CSS, specific to plugins, are applied if enabled."
+msgstr ""
+
+#: inc/admin/options-data.php:101
+msgid "Optimize Google Fonts"
+msgstr ""
+
+#: inc/admin/options-data.php:102
+msgid "Add preconnect hints and add display swap for Google Fonts."
+msgstr ""
+
+#: inc/admin/options-data.php:108
+msgid "Optimize CSS: Remove Unused"
+msgstr ""
+
+#: inc/admin/options-data.php:116
+msgid "Remove Unused CSS"
+msgstr ""
+
+#: inc/admin/options-data.php:117
+msgid "This is an expensive process. DO NOT use without a cache plugin."
+msgstr ""
+
+#: inc/admin/options-data.php:124
+msgid "Remove from All Stylesheets"
+msgstr ""
+
+#: inc/admin/options-data.php:125
+msgid "WARNING: Only use if you are sure your plugins and themes dont add classes using JS. May also be enabled when delay loading all the original CSS."
+msgstr ""
+
+#: inc/admin/options-data.php:133
+msgid "Enable for Plugins CSS"
+msgstr ""
+
+#: inc/admin/options-data.php:134
+msgid "Removed unused CSS on all plugins CSS files."
+msgstr ""
+
+#: inc/admin/options-data.php:147
+msgid "Enable for Theme CSS"
+msgstr ""
+
+#: inc/admin/options-data.php:148
+msgid "Removed unused CSS from all theme CSS files."
+msgstr ""
+
+#: inc/admin/options-data.php:161
+msgid "Target Stylesheets"
+msgstr ""
+
+#: inc/admin/options-data.php:163
+msgid "Will remove unused CSS from these targets. You may use an ID or the part of the URL. Examples:"
+msgstr ""
+
+#: inc/admin/options-data.php:181
+msgid "Exclude Stylesheets"
+msgstr ""
+
+#: inc/admin/options-data.php:195
+msgid "Always Keep Selectors"
+msgstr ""
+
+#: inc/admin/options-data.php:197
+msgid "Enter one per line. Partial or full matches for selectors (if any of these keywords found, the selector will be kept). Examples:"
+msgstr ""
+
+#: inc/admin/options-data.php:210
+msgid "Advanced: Conditionally Keep Selectors"
+msgstr ""
+
+#: inc/admin/options-data.php:226
+msgid "Add Condition"
+msgstr ""
+
+#: inc/admin/options-data.php:227
+msgid "Remove"
+msgstr ""
+
+#: inc/admin/options-data.php:235
+msgid "Remove CSS On"
+msgstr ""
+
+#: inc/admin/options-data.php:236
+msgid "Pages where unused CSS should be removed."
+msgstr ""
+
+#: inc/admin/options-data.php:246
+msgid "Delay load Original CSS"
+msgstr ""
+
+#: inc/admin/options-data.php:247
+msgid "Delay-loading all of the original CSS might be needed in situations where there are too many JS-based CSS classes that are added later such as sliders, that you cannot track down and add to exclusions right now. Or on pages that may have Auto-load Next Post."
+msgstr ""
+
+#: inc/admin/options-data.php:255
+msgid "Delay load Original On"
+msgstr ""
+
+#: inc/admin/options-data.php:256
+msgid "Pages where original CSS should be delayed load."
+msgstr ""
+
+#: inc/admin/options-data.php:283
+msgid "Defer Javascript"
+msgstr ""
+
+#: inc/admin/options-data.php:284
+msgid "Delay JS execution till HTML is loaded to fix Render-Blocking JS issues."
+msgstr ""
+
+#: inc/admin/options-data.php:291, inc/admin/options-data.php:399
+msgid "Exclude Scripts"
+msgstr ""
+
+#: inc/admin/options-data.php:292
+msgid "Enter one per line to exclude certain JS files from being deferred."
+msgstr ""
+
+#: inc/admin/options-data.php:300
+msgid "Defer Inline JS"
+msgstr ""
+
+#: inc/admin/options-data.php:303
+msgid "Defer all inline JS."
+msgstr ""
+
+#: inc/admin/options-data.php:304
+msgid "Note:"
+msgstr ""
+
+#: inc/admin/options-data.php:305
+msgid "Normally not needed. All correct dependent inline scripts are deferred by default. Enable if inline JS not enqueued using WordPress enqueue functions."
+msgstr ""
+
+#: inc/admin/options-data.php:314
+msgid "Minify Javascript"
+msgstr ""
+
+#: inc/admin/options-data.php:315
+msgid "Minify all the deferred or delayed JS files."
+msgstr ""
+
+#: inc/admin/options-data.php:323
+msgid "Special pre-made rules for javascript, specific to plugins, are applied if enabled."
+msgstr ""
+
+#: inc/admin/options-data.php:337
+msgid "Delay Load JS"
+msgstr ""
+
+#: inc/admin/options-data.php:345
+msgid "Delay Javascript"
+msgstr ""
+
+#: inc/admin/options-data.php:346
+msgid "Delay execution of the targeted JS files until user interaction."
+msgstr ""
+
+#: inc/admin/options-data.php:353
+msgid "Maximum Delay (in seconds)"
+msgstr ""
+
+#: inc/admin/options-data.php:354
+msgid "Max seconds to wait for interaction until delayed JS is loaded anyways."
+msgstr ""
+
+#: inc/admin/options-data.php:366
+msgid "Delay All Scripts"
+msgstr ""
+
+#: inc/admin/options-data.php:367
+msgid "CAREFUL. Delays all JS files. Its better to target scripts manually below. If there are scripts that setup sliders/carousels, animations, or other similar things, these won't be setup until the first user interaction."
+msgstr ""
+
+#: inc/admin/options-data.php:375
+msgid "Target Scripts"
+msgstr ""
+
+#: inc/admin/options-data.php:377
+msgid "Will delay from these scripts. You may use an ID, part of the URL, or any code for inline scripts. One per line. Examples:"
+msgstr ""
+
+#: inc/admin/options-data.php:401
+msgid "Enter one per line to exclude certain scripts from this optimizations. Examples:"
+msgstr ""
+
+#: inc/admin/options-data.php:414
+msgid "Delay Google Ads"
+msgstr ""
+
+#: inc/admin/options-data.php:415
+msgid "Delay Google Adsense until first interaction. Note: This may not be ideal if you have ads that are in header."
+msgstr ""
+
+#: inc/admin/options-data.php:429
+msgid "Disable for Admins"
+msgstr ""
+
+#: inc/admin/options-data.php:430
+msgid "Disable processing for logged in admin users or any user with capability \"manage_options\". (Useful if using a pagebuilder that conflicts)"
+msgstr ""
