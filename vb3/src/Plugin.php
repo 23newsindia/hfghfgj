@@ -41,85 +41,56 @@ class Plugin {
     }
 
     public function process_styles() {
-        if (!$this->should_process()) {
-            return;
-        }
+    if (!$this->should_process()) {
+        return;
+    }
 
-        // Emergency stop if needed
-        if (isset($_GET['disable_css_optimization'])) {
-            return;
-        }
-
+    // Add this to process styles before they're printed
+    add_action('wp_print_styles', function() {
         global $wp_styles;
+        
         if (!is_object($wp_styles)) {
             return;
         }
 
-        // Create DOM document
-        $dom = new \DOMDocument();
-        libxml_use_internal_errors(true);
-
-        $stylesheets = [];
         foreach ($wp_styles->queue as $handle) {
             if (!isset($wp_styles->registered[$handle])) {
                 continue;
             }
 
             $style = $wp_styles->registered[$handle];
+            
+            // Skip if no source URL
             if (!$style->src) {
                 continue;
             }
 
-            // Backup original CSS
-            $this->backup_original_css($handle, $style->src);
+            // Dequeue the original style
+            wp_dequeue_style($handle);
 
+            // Create stylesheet object
             $stylesheet = new OptimizeCss\Stylesheet();
             $stylesheet->url = $style->src;
             $stylesheet->id = $handle;
 
-            if (strpos($stylesheet->url, '//') === false) {
-                if (strpos($stylesheet->url, '/') === 0) {
-                    $stylesheet->url = site_url($stylesheet->url);
-                } else {
-                    $stylesheet->url = site_url('/' . $stylesheet->url);
-                }
-            }
+            // Process the stylesheet
+            $remover = new RemoveCss([$stylesheet], new \DOMDocument(), '');
+            $remover->process();
 
-            $stylesheets[] = $stylesheet;
-            $this->stylesheets[$handle] = $stylesheet;
-            wp_dequeue_style($handle);
+            // Re-add the optimized CSS inline
+            if ($stylesheet->content) {
+                wp_add_inline_style(
+                    'wp-unused-css-remover-dummy', // Add a dummy handle
+                    $stylesheet->content
+                );
+            }
         }
+    }, 999999);
 
-        if (empty($stylesheets)) {
-            return;
-        }
+    // Add dummy style to hook inline styles to
+    wp_enqueue_style('wp-unused-css-remover-dummy', null);
+}
 
-        // Add critical CSS preservation
-        add_filter('debloat/allow_css_selectors', [$this, 'preserve_critical_css']);
-
-        $remover = new RemoveCss($stylesheets, $dom, '');
-        $remover->process();
-
-        add_filter('style_loader_tag', function ($tag, $handle, $href, $media) {
-            if (!isset($this->stylesheets[$handle])) {
-                return $tag;
-            }
-
-            $sheet = $this->stylesheets[$handle];
-            if (!$sheet->content) {
-                // Fallback to original CSS if optimization fails
-                $sheet->content = $this->get_original_css($handle);
-            }
-
-            return sprintf(
-                '<style id="%s">%s</style>',
-                esc_attr($sheet->render_id),
-                $sheet->content
-            );
-        }, 10, 4);
-
-        libxml_clear_errors();
-    }
 
     protected function backup_original_css($handle, $src) {
         $file = Plugin::file_system()->url_to_local($src);
